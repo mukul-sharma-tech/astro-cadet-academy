@@ -1,0 +1,278 @@
+/* Basic Space Theme */
+body {
+    background-color: #0a0a1a; /* Very dark blue */
+    color: #f0f0f0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#game-container {
+    width: 90%;
+    max-width: 600px;
+    background-color: #1a1a2a;
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(100, 150, 255, 0.2);
+    text-align: center;
+}
+
+/* Screen Management */
+.screen {
+    display: none; /* Hide all screens by default */
+}
+.screen.active {
+    display: block; /* Show only the active screen */
+}
+
+/* Button Styling */
+.btn {
+    display: block;
+    width: 80%;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #555;
+}
+.btn-secondary:hover {
+    background-color: #333;
+}
+
+h1, h2 {
+    color: #9acaff; /* Light blue for titles */
+}
+
+
+/* --- ASTRO-SORT GAME STYLES --- */
+
+#sort-game-area {
+    height: 400px;
+    position: relative;
+    background-color: #0a0a1a;
+    border: 1px solid #9acaff;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#sort-boxes-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    box-sizing: border-box; /* Important */
+}
+
+.sort-box {
+    width: 45%;
+    height: 100%;
+    background-color: #1a1a2a;
+    border: 2px dashed #444;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #9acaff;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* This style is added when a word is dragged over a box */
+.sort-box.drag-over {
+    background-color: #2a2a4a;
+    border-color: #007bff;
+}
+
+.sort-word {
+    position: absolute;
+    top: 20px; /* Start all words near the top */
+    left: 50%;
+    transform: translateX(-50%); /* Center the word */
+    background-color: #f0f0f0;
+    color: #1a1a2a;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: grab;
+    user-select: none; /* Prevents text selection while dragging */
+    border: 2px solid #ccc;
+}
+
+/* This style is added to the word being dragged */
+.sort-word.dragging {
+    opacity: 0.5;
+    cursor: grabbing;
+}
+
+/* --- COSMIC-BURST GAME STYLES --- */
+
+#burst-game-area {
+    height: 400px;
+    position: relative;
+    background-color: #0a0a1a;
+    border: 1px solid #9acaff;
+    border-radius: 5px;
+    margin-top: 20px;
+    overflow: hidden; /* This is key to hide bubbles that float off-screen */
+}
+
+#burst-score, #burst-lives {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #9acaff;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px; /* Start below the screen */
+    
+    /* NEW: Gradient background for depth */
+    background: linear-gradient(145deg, #e0e0e0, #a0a0a0); 
+    color: #1a1a2a;
+    
+    padding: 10px 15px;
+    border-radius: 50%; /* Makes it a circle */
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    
+    /* NEW: Subtle shadow for pop-out effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    
+    /* NEW: Add a subtle border */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border for definition */
+
+    /* Keep transition for hover effect */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background 0.2s ease-out;
+    
+    /* Link to the animation */
+    animation-name: floatUp;
+    animation-timing-function: linear;
+}
+
+.bubble:hover {
+    transform: scale(1.15) translateY(-5px); /* Lift and enlarge slightly */
+    /* NEW: Slightly brighter hover state */
+    background: linear-gradient(145deg, #ffffff, #c0c0c0); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* More pronounced shadow */
+}
+
+/* NEW: Add a pseudo-element for a "shine" effect */
+.bubble::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 20%;
+    width: 60%;
+    height: 30%;
+    border-radius: 50%;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    opacity: 0.7;
+    filter: blur(5px); /* Soften the shine */
+    pointer-events: none; /* Make sure it doesn't block clicks */
+}
+
+
+.bubble.correct {
+    /* NEW: Green gradient for correct bubbles */
+    background: linear-gradient(145deg, #4CAF50, #2E8B57); /* Shades of green */
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.bubble.correct:hover {
+    background: linear-gradient(145deg, #6fd074, #3CB371); /* Brighter green on hover */
+}
+
+.bubble.wrong {
+    /* NEW: Red gradient for wrong bubbles */
+    background: linear-gradient(145deg, #F44336, #B22222); /* Shades of red */
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.bubble.wrong:hover {
+    background: linear-gradient(145deg, #FF6347, #CD5C5C); /* Brighter red on hover */
+}
+/* This is the animation that makes bubbles float up */
+@keyframes floatUp {
+    from {
+        bottom: -100px; /* Start off-screen */
+        transform: translateX(0px);
+    }
+    to {
+        bottom: 500px; /* End way above the screen */
+        /* Add a slight side-to-side drift */
+        transform: translateX(calc(var(--drift, 0) * 1px));
+    }
+}
+
+
+
+
+
+
+
+
+/* --- HIGH SCORE SCREEN STYLES --- */
+
+#high-scores-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#high-scores-list li {
+    background-color: #2a2a4a;
+    color: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+}
+
+#high-scores-list li .score-module {
+    font-weight: bold;
+    color: #9acaff;
+}
+
+#high-scores-list li .score-value {
+    font-weight: bold;
+    color: #4CAF50; /* Green for the score */
+}
+
+#high-scores-list li:nth-child(1) .score-value {
+    color: #FFD700; /* Gold for 1st place */
+}
+#high-scores-list li:nth-child(2) .score-value {
+    color: #C0C0C0; /* Silver for 2nd place */
+}
+#high-scores-list li:nth-child(3) .score-value {
+    color: #CD7F32; /* Bronze for 3rd place */
+}

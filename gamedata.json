@@ -1,0 +1,47 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "title": "Agency Missions",
+      "sort_level": {
+        "boxes": ["ISRO", "NASA"],
+        "words": [
+          {"text": "Mangalyaan", "box": "ISRO"},
+          {"text": "Apollo 11", "box": "NASA"},
+          {"text": "Chandrayaan", "box": "ISRO"},
+          {"text": "Voyager", "box": "NASA"},
+          {"text": "Gaganyaan", "box": "ISRO"},
+          {"text": "Artemis", "box": "NASA"},
+          {"text": "PSLV", "box": "ISRO"},
+          {"text": "Perseverance", "box": "NASA"}
+        ]
+      },
+      "burst_level": {
+        "topic": "ISRO",
+        "correct": ["Mangalyaan", "Chandrayaan", "Gaganyaan", "PSLV", "Vikram"],
+        "wrong": ["Apollo", "Artemis", "Voyager", "Saturn V", "Hubble"]
+      }
+    },
+    {
+      "id": 2,
+      "title": "Solar System",
+      "sort_level": {
+        "boxes": ["Planet", "Moon"],
+        "words": [
+          {"text": "Mars", "box": "Planet"},
+          {"text": "Titan", "box": "Moon"},
+          {"text": "Europa", "box": "Moon"},
+          {"text": "Jupiter", "box": "Planet"},
+          {"text": "Phobos", "box": "Moon"},
+          {"text": "Venus", "box": "Planet"},
+          {"text": "Ganymede", "box": "Moon"}
+        ]
+      },
+      "burst_level": {
+        "topic": "Planet",
+        "correct": ["Earth", "Mars", "Jupiter", "Saturn", "Neptune"],
+        "wrong": ["Moon", "Sun", "Titan", "Europa", "Ceres", "Pluto"]
+      }
+    }
+  ]
+}

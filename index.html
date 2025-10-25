@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astro-Cadet Academy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+
+        <div id="screen-main-menu" class="screen active">
+            <h1>Astro-Cadet Academy</h1>
+            <p>Welcome! Choose your mode.</p>
+            <button id="btn-goto-normal" class="btn">Normal Mode</button>
+            <button id="btn-goto-graduate" class="btn">Graduate Mode</button>
+            <button id="btn-goto-scores" class="btn btn-secondary">High Scores</button>
+        </div>
+
+        <div id="screen-normal-menu" class="screen">
+            <h2>Normal Mode</h2>
+            <p>Practice any test.</p>
+            <button id="btn-play-sort" class="btn">Play Astro-Sort</button>
+            <button id="btn-play-burst" class="btn">Play Cosmic Burst</button>
+            <hr>
+            <button class="btn btn-secondary btn-back-main">Back to Main Menu</button>
+        </div>
+
+        <div id="screen-graduate-menu" class="screen">
+            <h2>Graduate Mode</h2>
+            <p>Complete your training modules.</p>
+            <div id="graduate-modules-list">
+                </div>
+            <hr>
+            <button class="btn btn-secondary btn-back-main">Back to Main Menu</button>
+        </div>
+
+        <div id="screen-high-scores" class="screen">
+            <h2>High Scores</h2>
+            <ul id="high-scores-list">
+                </ul>
+            <hr>
+            <button class="btn btn-secondary btn-back-main">Back to Main Menu</button>
+        </div>
+
+        <div id="screen-game-sort" class="screen">
+            <h2 id="sort-title">Astro-Sort: Loading...</h2>
+            <div id="sort-game-area">
+                <div id="sort-words-queue">
+                    </div>
+                <div id="sort-boxes-container">
+                    </div>
+            </div>
+            <div id="sort-score">Score: 0</div>
+        </div>
+        
+        <div id="screen-game-burst" class="screen">
+            <h2 id="burst-title">Cosmic Burst: Loading...</h2>
+            <p>Topic: <span id="burst-topic">...</span></p>
+            <div id="burst-game-area">
+                </div>
+            <div id="burst-score">Score: 0</div>
+            <div id="burst-lives">Lives: 3</div>
+        </div>
+
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
