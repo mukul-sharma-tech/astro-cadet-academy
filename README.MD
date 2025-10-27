@@ -1,84 +1,120 @@
-.
+# 🚀 Astro-Cadet Academy
 
-🚀 Astro-Cadet Academy
-A fun, offline-first educational game to learn about space exploration! Test your knowledge of ISRO, NASA, and the cosmos through fast-paced mini-games.
+_A fun, offline-first educational game to learn about space exploration!_  
+Test your knowledge of **ISRO**, **NASA**, and the **cosmos** through fast-paced mini-games.
 
-This project is a submission for the HackwithMAIT 6.0 (CompeteHub Sponsor Track).
+> 🧑‍🚀 This project is a submission for **HackwithMAIT 6.0** (CompeteHub Sponsor Track).
 
-✨ Features
-Offline-First: Thanks to a Service Worker, the game works 100% without an internet connection after the first load.
+---
 
-Two Unique Game Modes:
+## ✨ Features
 
-🎓 Graduate Mode: The main challenge! Play through modules, starting with a sorting test and finishing with a reflex-based "burst" test to pass.
+### 🌐 Offline-First
+Thanks to a **Service Worker**, the game works 100% **without an internet connection** after the first load.
 
-🎮 Normal Mode: Casually practice any game. Pick your favorite topic and play either Astro-Sort or Cosmic Burst for fun.
+### 🧩 Two Unique Game Modes
+- **🎓 Graduate Mode:**  
+  The main challenge! Play through modules, starting with a sorting test and finishing with a reflex-based “burst” test to pass.
+  
+- **🎮 Normal Mode:**  
+  Casually practice any game. Pick your favorite topic and play either **Astro-Sort** or **Cosmic Burst** for fun.
 
-Two Engaging Game Types:
+### 🕹️ Two Engaging Game Types
+- **🪐 Astro-Sort:**  
+  A drag-and-drop logic game where you must sort terms (like _“Mangalyaan”_ or _“Apollo 11”_) into the correct “bucket” (like _“ISRO”_ or _“NASA”_).
 
-Astro-Sort: A drag-and-drop logic game where you must sort terms (like "Mangalyaan" or "Apollo 11") into the correct "bucket" (like "ISRO" or "NASA").
+- **💫 Cosmic Burst:**  
+  An arcade-style reflex game where you must burst the “bubbles” related to a specific topic while avoiding the wrong ones.
 
-Cosmic Burst: An arcade-style reflex game where you must burst the "bubbles" related to a specific topic while avoiding the wrong ones.
+### 🏆 Persistent High Scores
+Your top 10 scores are saved directly in your browser using **localStorage**.
 
-Persistent High Scores: The game saves your top 10 scores directly in your browser using localStorage.
+### 💻 100% Vanilla JavaScript
+Built with **zero dependencies** — just **HTML**, **CSS**, and **Vanilla JavaScript**.
 
-Pure JavaScript: Built with zero dependencies. Just plain HTML, CSS, and Vanilla JavaScript.
+---
 
-🎮 How to Play
-Main Menu: Choose your path.
+## 🎮 How to Play
 
-Graduate Mode: Take the full challenge.
+### 🪩 Main Menu
+Choose your path:
+- **Graduate Mode** — Take the full challenge.
+- **Normal Mode** — Practice specific skills.
+- **High Scores** — Check your top 10 records.
 
-Normal Mode: Practice a specific skill.
+---
 
-High Scores: Check your top 10 scores.
+### 🔭 Normal Mode
+1. Select a game: _“Play Astro-Sort”_ or _“Play Cosmic Burst”_.  
+2. Choose a topic (e.g., **Agency Missions**).  
+3. Play and try to beat your high score!
 
-Normal Mode:
+---
 
-Select a game: "Play Astro-Sort" or "Play Cosmic Burst".
+### 🎓 Graduate Mode
+1. Select a training module (e.g., **Agency Missions**).  
+2. **Phase 1:** Pass the Astro-Sort test.  
+3. **Phase 2:** Survive the Cosmic Burst test as your final challenge.  
+4. Your score is recorded — and you **pass the module**!
 
-Select a topic (e.g., "Agency Missions").
+---
 
-Play just that one game and try to get a high score!
+## 💻 Tech Stack
 
-Graduate Mode:
+| Technology | Purpose |
+|-------------|----------|
+| **HTML5** | Core structure and all game screens |
+| **CSS3** | Styling, bubble animations (`@keyframes`), and dark mode |
+| **Vanilla JavaScript (ES6+)** | Game logic, DOM manipulation, and mode switching |
+| **Service Workers** | Cache assets for offline-first experience |
+| **JSON** | Acts as a lightweight database (`gamedata.json`) |
+| **localStorage** | Saves and retrieves leaderboard data |
 
-Select a training module (e.g., "Agency Missions").
+---
 
-Phase 1: You must first pass the Astro-Sort test.
+## 🚀 How to Run / Deploy
 
-Phase 2: You are immediately sent to the Cosmic Burst test as a final challenge.
+### ⚠️ Note
+Because this project uses a **Service Worker**, it must run in a **secure context (HTTPS)**.  
+You **cannot** simply open `index.html` directly from your desktop.
 
-Your score is recorded, and you pass the module!
+---
 
-💻 Tech Stack
-HTML5: For the core structure and all game screens.
+### 🪄 Easiest Way to Deploy
 
-CSS3: For styling, custom "bubble" animations (@keyframes), and a responsive, dark-mode theme.
+#### Option 1: Netlify (Recommended)
+1. Go to [https://app.netlify.com/drop](https://app.netlify.com/drop)
+2. **Drag and drop** your project folder.
+3. The game will be live instantly on a secure URL!
 
-Vanilla JavaScript (ES6+): For all game logic, DOM manipulation, and mode switching.
+#### Option 2: GitHub Pages
+1. Push your project to a GitHub repository.  
+2. Enable **GitHub Pages** in the repository settings.  
+3. Access your live game from the provided link.
 
-Service Workers: To cache all game assets (index.html, style.css, game.js, gamedata.json) for a true offline-first experience.
+---
 
-JSON: A single gamedata.json file acts as a simple "database" for all game levels, questions, and answers.
+### 🧠 Test Offline Mode
+1. Load the game once in your browser.  
+2. Open **Developer Tools (F12)** → **Application tab** → **Service Workers**.  
+3. Check the **“Offline”** box.  
+4. Refresh the page — the game still loads and plays perfectly! 🚀
 
-Browser localStorage: To save and retrieve the high score leaderboard.
+---
 
-🚀 How to Run / Deploy
-This project uses a Service Worker, which requires a secure context (HTTPS) to run in the browser. You cannot just open the index.html file from your desktop.
+## 🛰️ Project Structure
+astro-cadet-academy/
+├── index.html
+├── style.css
+├── game.js
+├── gamedata.json
+├── sw.js
+└── assets/
 
-The easiest way to deploy:
 
-Drag and drop the entire project folder onto Netlify. It will be live on a secure, shareable URL in seconds.
+## 👨‍🚀 Authors & Credits
+**Astro-Cadet Academy** — made with ❤️ and curiosity for the stars.  
+Built for **HackwithMAIT 6.0** (CompeteHub Track).
 
-Alternatively, upload the files to a GitHub Pages repository.
 
-Once deployed, you can test the offline functionality:
-
-Load the game once.
-
-Open your browser's Developer Tools (F12).
-
-Go to the Application tab -> Service Workers and check the "Offline" box.
-
-Refresh the page. The game will still load and play perfectly!
+> _“Aim for the stars — even if you miss, you’ll land among the cadets.”_ ✨
