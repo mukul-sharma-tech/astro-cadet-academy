@@ -103,13 +103,16 @@ You **cannot** simply open `index.html` directly from your desktop.
 ---
 
 ## 🛰️ Project Structure
+
+```plaintext
 astro-cadet-academy/
-├── index.html
-├── style.css
-├── game.js
-├── gamedata.json
-├── sw.js
-└── assets/
+├── index.html          # Main HTML file (game layout and screens)
+├── style.css           # Styling and animations (dark theme + bubble effects)
+├── game.js             # Core game logic (Astro-Sort & Cosmic Burst)
+├── gamedata.json       # Game data and questions (acts as a mini database)
+├── sw.js               # Service Worker for offline functionality
+└── assets/             # Images, icons, and other media files
+
 
 
 ## 👨‍🚀 Authors & Credits
